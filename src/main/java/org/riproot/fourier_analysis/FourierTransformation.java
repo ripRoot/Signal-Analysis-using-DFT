@@ -1,5 +1,7 @@
 package org.riproot.fourier_analysis;
 
+import java.util.HashMap;
+
 // https://www.nayuki.io/page/how-to-implement-the-discrete-fourier-transform
 
 public class FourierTransformation {
@@ -28,7 +30,7 @@ public class FourierTransformation {
      * 
      * Extract Features
      * 
-     * Use a language model to convert the sequence into phonemes into recognizable words and sentances. 
+     * Use a language model to convert the sequence into phonemes into recognizable words and sentances. //maybe
      */
 
      private double[] outReal;
@@ -71,4 +73,16 @@ public class FourierTransformation {
      public double[] getImg(){
         return outImg;
      }
+
+
+    // Returns a map of how many times each freq shows up in the arr.  
+    public HashMap freqMap(double[] in){
+        HashMap<Double, Integer> freqMap = new HashMap<>();
+        
+        for(double num : in){
+            freqMap.put(num, freqMap.getOrDefault(num, 0) + 1);
+        }
+
+        return freqMap;
+    }  
 }

@@ -28,7 +28,7 @@ public class SignalGenerator {
 
 
         try {
-            audio = AudioSystem.getAudioInputStream(wavFile); // I think that this is the line that it will fail on. 
+            audio = AudioSystem.getAudioInputStream(wavFile); 
             
             byte[] Buffer = new byte[4096]; //52000 bytes is about 52 kilobytes which is how much storage the Carlitos_Way_Watching file is. 
             //While loop will run until there are no more bytes in Carlitos_Way_Watching. 
@@ -50,7 +50,7 @@ public class SignalGenerator {
     }
 
     public SignalGenerator(){
-        // Overloading constructions to make another object that only uses the generateSineWave function in it. 
+        // Overloading constructions to make another object that only uses the generateSineWave/ other possible functions in it when missing .wav function
     }
 
     public byte[] getAllAudioBytes(){
