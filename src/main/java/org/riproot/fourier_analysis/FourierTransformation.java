@@ -80,7 +80,9 @@ public class FourierTransformation {
         HashMap<Double, Integer> freqMap = new HashMap<>();
         
         for(double num : in){
-            freqMap.put(num, freqMap.getOrDefault(num, 0) + 1);
+            double yay = Math.round(num * 10000.0) / 10000.0;
+            //System.out.println(yay);
+            freqMap.put(yay, freqMap.getOrDefault(yay, 0) + 1);
         }
 
         return freqMap;
